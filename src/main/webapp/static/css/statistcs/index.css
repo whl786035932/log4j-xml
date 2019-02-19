@@ -1,0 +1,28 @@
+.chooseDay label{
+	padding-top: 8px;
+}
+.searchArea label{
+	width:65px;
+}
+.searchArea input{
+	width: calc(100% - 80px);
+    text-align: center;
+    display: inline-block;
+}
+#statisticTree{
+	width: 100%;
+    height: 650px;
+	clear: both;
+	border: 1px solid #E6E9ED;
+	margin-top:10px;
+	overflow: auto;
+}
+.chooseDay{
+	margin-bottom:16px;
+}
+#exportExcel{
+	display: inline-block;
+    width: 107px;
+    margin: 0;
+    float: right;
+}

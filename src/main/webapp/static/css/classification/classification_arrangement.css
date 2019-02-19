@@ -1,0 +1,88 @@
+.classification{
+	overflow: auto;
+    max-height: 80px;
+}
+
+#table_paginate .pagination{
+	display: inline;
+}
+
+#table .content-image{
+	width:150px;
+	height:104px;
+	display: table-cell;
+    vertical-align: middle;
+	border:1px solid #e6d9d9;
+}
+
+#table .content-div{
+	display: inline-table;
+	height: 102px;
+	vertical-align: middle;
+}
+
+#table .content-div div{
+	display: table-cell;
+    vertical-align: middle;
+}
+
+ #table tbody tr td{
+    vertical-align:  middle;
+    padding:0px 8px;
+ }
+
+.foright {
+	float: right;
+}
+#basic{
+	border-left:none;
+}
+.mail_list_column{
+	border-right: 1px solid #DBDBDB;
+}
+.zTreeDemoBackground{
+	width: 100%;
+}
+#delete{
+	margin-right:0;
+}
+#search{
+	float:right;
+	margin-right:23px;
+}
+.thumbnail .size {
+    float: right;
+}
+.thumbnail .description {
+    padding: 5px 9px;
+    color: #333;
+}
+.position{
+	text-align:center;
+}
+.mask {
+    display: block !important;
+    height: 100%;
+}
+.mask .tools a{
+	font-size: 14px;
+}
+.Rflag{
+	display: inline-block;
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    padding: 1px 12px;
+    line-height: initial !important;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+.sfixed{
+	position:fixed;
+	top:0px;
+	z-index:10;
+	background-color:#fff;
+ }
+ #table_wrapper .row .col-sm-7{
+ 	padding-top: 10px;
+ }

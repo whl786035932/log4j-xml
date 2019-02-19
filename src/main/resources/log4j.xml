@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Console logger. -->
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{MM-dd HH:mm:ss.SSS}] %-5p (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+
+	<!-- Info Logger -->
+	<appender name="infoFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/cms/info.log"/>
+		<param name="Threshold" value="DEBUG"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-5p (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+	<!-- 统计换串的，设置输出的方式  begin-->  
+	<appender name="countFileAppender"  class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/cms/count.log"/>
+		<param name="Threshold" value="DEBUG"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<category name="cn.videoworks.cms.web.StatisticsController" additivity="false">
+		<priority value="ERROR"/>
+		<appender-ref ref="countFileAppender"/>
+	</category>
+	<logger name="count"  >
+		<level value="INFO" />
+	   <appender-ref ref="countFileAppender" />  
+	</logger>
+	<!-- 统计换串的，设置输出的方式  end-->
+	
+	
+	<!-- Application Loggers -->
+	<logger name="cn.videoworks.cms">
+		<level value="DEBUG"/>
+	</logger>
+	<logger name="test">
+		<level value="DEBUG"/>
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="WARN"/>
+		<appender-ref ref="consoleAppender"/>
+		<appender-ref ref="infoFileAppender"/>
+	</root>
+</log4j:configuration>

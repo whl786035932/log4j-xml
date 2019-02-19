@@ -1,0 +1,23 @@
+.search-area .form-horizontal .form-group{
+	padding:0;
+	float:left;
+}
+.search-area .form-horizontal .form-group .control-div{
+	float:left;
+	width:calc(100% - 100px);
+}
+.date-div input{
+	float:left;
+	width: calc(50% - 5px);
+}
+#insertedBegin{
+	margin-right:10px;
+}
+.search-area {
+    padding: 0px; 
+}
+
+#my-model{
+	 overflow-y: auto;
+	 height: 450px;
+}

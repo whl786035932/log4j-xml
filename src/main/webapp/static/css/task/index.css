@@ -1,0 +1,45 @@
+#table_paginate .pagination{
+	display: inline;
+}
+.search-area{
+	padding-top:10px;
+}
+.search-area .form-horizontal .form-group{
+	padding:0;
+	float:left;
+}
+.search-area .form-horizontal .form-group .control-label{
+	padding-left:0;
+	padding-right:0;
+	text-align: left;
+	width: 65px;
+	float:left;
+}
+.search-area .form-horizontal .form-group .control-div{
+	float:left;
+	width:calc(100% - 100px);
+}
+.search-area .form-horizontal .col-37 .control-div{
+	float:left;
+	width:calc(100% - 65px);
+}
+.date-div input{
+	float:left;
+	width: calc(50% - 5px);
+}
+#publishTimeBegin,#insertedBegin{
+	margin-right:10px;
+}
+.search-area .form-horizontal .form-group.col-25{
+	width:25%;
+}
+.search-area .form-horizontal .form-group.col-37{
+	width:calc(37.5% - 17.5px);
+}
+#search{
+	float: right;
+	margin-right:0;
+}
+table.table-bordered.dataTable th, table.table-bordered.dataTable td{
+	vertical-align: middle;
+}

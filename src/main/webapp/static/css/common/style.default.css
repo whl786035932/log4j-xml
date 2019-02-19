@@ -1,0 +1,113 @@
+.dataTables_processing {
+    height: 48px; 
+    color: #d22323;
+}
+#listForm .search-area .form-group{
+	    margin-bottom:5px;
+}
+table  input[type=checkbox]{
+	width:16px;
+	height:16px;
+}
+
+.dropdown-menu{
+	width:100% !important;
+	min-width:0;
+}
+.site_title{
+	padding-top:8px;	
+}
+.top_nav .dropdown-menu li a{
+	padding: 12px 12px;
+}
+.search-area{
+	background-color: #fff;
+    padding: 0px 17px;
+}
+.operate{
+	padding-bottom: 10px;
+}
+
+
+.search-br{
+	border-bottom: 2px solid #e7eaec;
+    margin: 10px 0px;
+}
+
+.search-btn{
+	margin-bottom: 0px!important;
+	margin-left: 30px;
+}
+
+.float-right{
+	float: right;
+}
+#table tbody tr td a{
+	margin: 6px;
+}
+table span.label{
+	padding: 4px 10px !important;
+    display: inline-block;
+    text-align: center;
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075)!important;
+}
+.search-area .form-horizontal .form-group .control-label{
+	padding-left:0;
+	padding-right:0;
+	text-align: left;
+	width: 65px;
+	float:left;
+}
+/* ZebraDialog弹框按钮样式 */
+.ZebraDialog h3.ZebraDialog_Title{
+	font-size: 18px;
+	margin: 0;
+    line-height: 1.42857143;
+    color: #73879C;
+    font-weight:400;
+}
+.ZebraDialog .ZebraDialog_ButtonsOuter .ZebraDialog_Buttons a{
+	display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    min-width:0;
+	border-radius: 3px;
+}
+
+/* 确定 */
+.ZebraDialog .ZebraDialog_ButtonsOuter .ZebraDialog_Buttons a.ZebraDialog_Button_0{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.ZebraDialog .ZebraDialog_ButtonsOuter .ZebraDialog_Buttons a.ZebraDialog_Button_0:hover{
+    background-color: #286090;
+    border-color: #204d74;
+}
+/* 取消 */
+.ZebraDialog .ZebraDialog_ButtonsOuter .ZebraDialog_Buttons a.ZebraDialog_Button_1{
+	color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-right:15px;
+}
+.ZebraDialog .ZebraDialog_ButtonsOuter .ZebraDialog_Buttons a.ZebraDialog_Button_1:hover{
+	color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.thumbnail{
+	height: 205px !important;
+}
+.required{
+	color:red;
+}

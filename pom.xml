@@ -1,0 +1,344 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.videoworks.cms</groupId>
+  <artifactId>cms</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>cms Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+		<java.version>1.7</java.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<spring.version>4.2.3.RELEASE</spring.version>
+		<hibernate.version>4.2.7.Final</hibernate.version>
+		<freemarker.version>2.3.20</freemarker.version>
+		<tiles.version>2.2.2</tiles.version>
+		<cxf.version>2.7.5</cxf.version>
+		<util-commons.version>3.0.4-SNAPSHOT</util-commons.version>
+		<web-commons.version>2.1.5-SNAPSHOT</web-commons.version>
+		<dao-commons.version>2.0.6-SNAPSHOT</dao-commons.version>
+		<springfox-version>2.5.0</springfox-version>
+	    <servlet-api.version>3.1.0</servlet-api.version>
+	    <jstl.version>1.2</jstl.version>
+  </properties>
+  <dependencies>
+  		<!-- Gearman -->
+  		<dependency>
+            <groupId>org.gearman.jgs</groupId>
+            <artifactId>java-gearman-service</artifactId>
+            <version>0.6.6</version>
+        </dependency>
+  
+  		<!-- postgresql  -->
+		 <dependency>
+		  <groupId>postgresql</groupId>
+		  <artifactId>postgresql</artifactId>
+		  <version>9.1-901-1.jdbc4</version>
+		</dependency>
+		
+    	<!-- JUnit 4 for test scope -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Spring 4 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- AspectJ Weaver -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+
+		<!-- Hibernate Validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.1.Final</version>
+		</dependency>
+
+		<!-- Freemarker and Tiles -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-api</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>jcl-over-slf4j</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+			<version>${tiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+
+		<!-- Jackson 2 for Spring 3.2.x above. -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.5</version>
+		</dependency>
+
+		<!-- Inner project dependencies -->
+		<dependency>
+			<groupId>cn.videoworks.commons.util</groupId>
+			<artifactId>util-commons</artifactId>
+			<version>${util-commons.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.videoworks.commons.dao</groupId>
+			<artifactId>dao-commons</artifactId>
+			<version>${dao-commons.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.videoworks.commons.webdev</groupId>
+			<artifactId>web-commons</artifactId>
+			<version>${web-commons.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+	        <version>1.2.7</version>
+	    </dependency>
+		
+		<!-- for OAuth 2.0 -->
+	    <dependency>
+	        <groupId>org.springframework.security.oauth</groupId>
+	        <artifactId>spring-security-oauth2</artifactId>
+	        <version>2.0.12.RELEASE</version>
+	    </dependency>
+	    <!-- for OAuth 1.0a -->
+	    <dependency>
+	        <groupId>org.springframework.security.oauth</groupId>
+	        <artifactId>spring-security-oauth</artifactId>
+	        <version>2.0.12.RELEASE</version>
+	    </dependency>		
+			
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-version}</version>
+        </dependency>
+		
+	        <!--jedis -->
+        <dependency>
+		  <groupId>org.springframework.data</groupId>
+		  <artifactId>spring-data-redis</artifactId>
+		  <version>1.7.1.RELEASE</version>
+		</dependency>
+        <dependency>
+		  <groupId>redis.clients</groupId>
+		  <artifactId>jedis</artifactId>
+		  <version>2.8.1</version>
+		</dependency>
+
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>${servlet-api.version}</version>
+		  <scope>provided</scope>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>jstl</artifactId>
+		  <version>${jstl.version}</version>
+	  </dependency>
+	  
+	  <!-- Cors Fileter -->
+	  <dependency>
+		  <groupId>com.thetransactioncompany</groupId>
+		  <artifactId>cors-filter</artifactId>
+		  <version>2.6</version>
+	 </dependency>
+	 
+	 <!-- .tar .tar.gz -->
+	 <dependency>
+	  <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-compress</artifactId>
+	  <version>1.9</version>
+	</dependency>
+	<!-- add poi for export excel -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+  </dependencies>
+  <build>
+    <finalName>${artifactId}-${version}</finalName>
+    <plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>pre-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>post-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>7.6.12.v20130726</version>
+                    <configuration>
+                        <webAppConfig>
+                            <contextPath>/</contextPath>
+                        </webAppConfig>
+                        <reload>automatic</reload>
+                        <connectors>
+                            <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                                <port>8090</port>
+                            </connector>
+                        </connectors>
+                        <systemProperties>
+                            <systemProperty>
+                                <name>org.mortbay.util.URI.charset</name>
+                                <value>UTF-8</value>
+                            </systemProperty>
+                        </systemProperties>
+                    </configuration>
+                </plugin>
+			</plugins>
+		</pluginManagement>
+  </build>
+</project>
